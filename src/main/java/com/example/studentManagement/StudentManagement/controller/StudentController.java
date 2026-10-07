@@ -3,6 +3,8 @@ package com.example.studentManagement.StudentManagement.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +26,18 @@ public class StudentController {
 	public List<Student> getAllRecords(){
 		return studentServices.getAllRecords();
 	}
-
+	
+	@GetMapping("/getRecordsById/{id}")
+	public List<Student> getRecordsById(@PathVariable("id") int id){
+		return (List<Student>) studentServices.getRecordsById(id);
+	}
+	
+	@GetMapping("/getRecordsByDomain/{Domain}")
+	public List<Student> getRecordsByDomain(@PathVariable("Domain") String Domain){
+		return studentServices.getRecordsByDomain(Domain);
+	}
+		
+		
 }
+
+
