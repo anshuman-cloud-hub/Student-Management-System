@@ -42,13 +42,12 @@ public class StudentServices {
 	}
 	
 	
-	public List<Student> getRecordsByDomain(String Domain) {
+	public List<Student> getRecordsByDomain(String domain) {
 		
 		List<Student> data = new ArrayList<>();
 		
 		for(int i = 0; i<List.size();i++) {
-			if(List.get(i).getDomain().equalsIgnoreCase("Domain"));
-			
+			if(List.get(i).getDomain().equalsIgnoreCase(domain))
 			data.add(List.get(i));
 		}
 		

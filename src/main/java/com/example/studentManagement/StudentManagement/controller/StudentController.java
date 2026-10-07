@@ -28,13 +28,13 @@ public class StudentController {
 	}
 	
 	@GetMapping("/getRecordsById/{id}")
-	public List<Student> getRecordsById(@PathVariable("id") int id){
-		return (List<Student>) studentServices.getRecordsById(id);
+	public Student getRecordsById(@PathVariable("id") int id){
+		return studentServices.getRecordsById(id);
 	}
 	
-	@GetMapping("/getRecordsByDomain/{Domain}")
-	public List<Student> getRecordsByDomain(@PathVariable("Domain") String Domain){
-		return studentServices.getRecordsByDomain(Domain);
+	@GetMapping("/getRecordsByDomain/{domain}")
+	public List<Student> getRecordsByDomain(@PathVariable("domain") String domain){
+		return studentServices.getRecordsByDomain(domain);
 	}
 		
 		
